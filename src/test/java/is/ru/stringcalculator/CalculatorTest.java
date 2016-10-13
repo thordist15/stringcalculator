@@ -41,5 +41,8 @@ public class CalculatorTest {
 	public void testNegativeNumbers() {
 		assertEquals(3, Calculator.add("-3,-2,-1,9"));
 	}
-
+	@Test
+	public void testIgnoreBigNumbers() {
+		assertEquals(15, Calculator.add("1004,1677,5,10"));
+	}
 }

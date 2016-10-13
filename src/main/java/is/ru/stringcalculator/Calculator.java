@@ -22,7 +22,12 @@ public class Calculator {
 				if (!e.isEmpty()) {
 					System.err.println("Negatives not allowed: " + e);
 				}
-				return sum(splitNumbers(text));
+				for (int i=0; i<n.length;i++){
+					if (toInt(n[i]) > 1000){
+						n[i] = "0";
+					}
+				}
+				return sum(n);
 			}
 	}
 
