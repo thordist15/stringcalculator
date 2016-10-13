@@ -3,16 +3,27 @@ package is.ru.stringcalculator;
 public class Calculator {
 
 	public static int add(String text){
-		text = text.replaceAll("\n", ",");
-		
-		if(text.equals("")){
-			return 0;
-		}
-		else if(text.contains(",")){
-			return sum(splitNumbers(text));
-		}
-		else
-			return 1;
+
+			text = text.replaceAll("\n", ",");
+	
+			if(text.equals("")){
+				return 0;
+			}
+			
+			else
+			{
+				String[] n = splitNumbers(text);
+				String e = "";
+				for (String s : n) {
+					if (s.indexOf("-")>=0){
+						e += s + ",";
+					}
+				}
+				if (!e.isEmpty()) {
+					System.err.println("Negatives not allowed: " + e);
+				}
+				return sum(splitNumbers(text));
+			}
 	}
 
 	private static int toInt(String number){
@@ -31,3 +42,5 @@ public class Calculator {
 		return total;
     }
 }
+
+
