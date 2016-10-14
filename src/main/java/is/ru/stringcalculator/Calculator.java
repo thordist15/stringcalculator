@@ -4,8 +4,13 @@ public class Calculator {
 
 	public static int add(String text){
 
+			if (text.contains ("//")){
+				String delim = text.substring(2, text.indexOf("\n"));
+				text = text.substring(text.indexOf("\n") +1);
+				text = text.replaceAll(delim, ",");
+			}
 			text = text.replaceAll("\n", ",");
-	
+
 			if(text.equals("")){
 				return 0;
 			}

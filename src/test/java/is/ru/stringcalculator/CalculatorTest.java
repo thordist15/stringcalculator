@@ -45,4 +45,9 @@ public class CalculatorTest {
 	public void testIgnoreBigNumbers() {
 		assertEquals(15, Calculator.add("1004,1677,5,10"));
 	}
+
+	@Test
+	public void testDelimeteredNumbers() {
+		assertEquals(10, Calculator.add("//xxxx\n3xxxx7"));
+	}
 }
