@@ -25,7 +25,7 @@ public class Calculator {
 					}
 				}
 				if (!e.isEmpty()) {
-					System.err.println("Negatives not allowed: " + e);
+					throw new IllegalArgumentException("Negatives not allowed: " + e);
 				}
 				for (int i=0; i<n.length;i++){
 					if (toInt(n[i]) > 1000){
